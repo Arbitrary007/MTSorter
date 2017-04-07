@@ -1,0 +1,25 @@
+MTSorter Changelog
+
+4/7/17: DT
+- Fixed the following
+	- mergesort.cc
+	- radix.cc
+	- counting.cc
+- Added an average function to sub.cc
+- Added Print unsorted and unsorted array to all sort algs
+- Implemented omp to main.cc but it's questionable if it's truely working 
+I'm going to work on it a bit later, there were a few things that's bothering me a little
+
+4/2/17: DT
+- Added the following to the documentation folder:
+	- Todo List.txt
+	- Changelog.txt to document changes
+	- Deadline.txt (may or may not be accurate)
+	- Begining of Presenation
+- Changes to main.cc
+	- minor cout changes and a couple note to self
+- The following has been added but doesn't work with main.cc yet, will be fixed later
+	- Added mergesort.cc
+	- Added radix.cc
+	- Added counting.cc
+  
