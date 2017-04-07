@@ -1,24 +1,30 @@
-#ifndef SUB_H
-#define SUB_H
+#ifndef SORTERS_H
+#define SORTERS_H
+#include <omp.h>
 
-//...to make the swap.
+//bubble sort
+void bubble(int max, int order);
 
-void swap(int *a, int *b);
+/* counting sort */
+void counting(int max, int order);
 
-//...to generate the random numbers.
+//heap sorter
+void heapsort(int max, int order);
 
-int rng();
+//insertion sort
+void insertion(int max, int order);
 
-//...to set seed.
+/* merge sort */
+void mergesort(int max, int order);
 
-void process();
+//quicksorter
+void quicksort(int max, int order);
 
-//integer printer
+/* radix sort */
+void radixsort(int max, int order);
 
-void pint(int x);
-
-//integer comparer
-
-int compint(int x, int y);
+//selection sort
+void selection(int max, int order);
 
 #endif
+
