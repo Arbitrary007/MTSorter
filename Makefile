@@ -1,12 +1,12 @@
 CC= g++
-CFLAGS=
+CFLAGS= -g -Wall -fopenmp
 LDFLAGS=
-OBJS= main.o sub.o bubble.o selection.o pq.o insertion.o quicksort.o heapsort.o
-CO=-o
+OBJS= main.o sub.o bubble.o counting.o heapsort.o insertion.o pq.o mergesort.o quicksort.o radix.o selection.o 
+CO= -o
 EXE=MTSorter
 
 MTSorter: $(OBJS)
-	$(CC) $(CO) $(EXE) $(OBJS) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(CO) $(EXE) $(OBJS) $(LDFLAGS)
 
 ##-------------
 #INCLUDE deps

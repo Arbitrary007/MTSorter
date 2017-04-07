@@ -1,45 +1,46 @@
 #ifndef PQ_H
 #define PQ_H
+#include <omp.h>
 
-/*include standard libraries and boolean type*/
+//include standard libraries and boolean type
 
 #include <iostream>
 using namespace std; 
 
-/*defining a priority queue*/
+//defining a priority queue
 
 typedef struct stacknode{
   int data;
   struct stacknode *next;
 } *PRIQUEUE;
 
-/*declaring subprograms*/
+//declaring subprograms
 
-/*this will enter a value into the P.Q.*/
+//this will enter a value into the P.Q.
 
 void Push (PRIQUEUE *Q, int x);
 
-/*this will retrieve value from the P.Q.*/
+//this will retrieve value from the P.Q.
 
 int Pop (PRIQUEUE *Q);
 
-/*this will initialize the P.Q.*/
+//this will initialize the P.Q.
 
 void Init (PRIQUEUE *Q);
 
-/*this will ensure that the P.Q. is not empty*/
+//this will ensure that the P.Q. is not empty
 
 bool Empty (PRIQUEUE Q);
 
-/*this will determine if the computer is capable of holding another value in the P.Q.*/
+//this will determine if the computer is capable of holding another value in the P.Q.
 
 bool Full (PRIQUEUE Q);
 
-/*this will print the P.Q. (newest to oldest)*/
+//this will print the P.Q. (newest to oldest)
 
 void ListPQ (PRIQUEUE Q);
 
-/*this will print the P.Q. (oldest to newest)*/
+//this will print the P.Q. (oldest to newest)
 
 void RevPQ (PRIQUEUE Q);
 

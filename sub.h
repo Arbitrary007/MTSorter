@@ -1,30 +1,31 @@
-#ifndef SORTERS_H
-#define SORTERS_H
+#ifndef SUB_H
+#define SUB_H
+#include <string>
 #include <omp.h>
+using std::string;
 
-//bubble sort
-void bubble(int max, int order);
+//...to make the swap.
+void swap(int *a, int *b);
 
-/* counting sort */
-void counting(int max, int order);
+//...to generate the random numbers.
+int rng();
 
-//heap sorter
-void heapsort(int max, int order);
+//...to set seed.
+void process();
 
-//insertion sort
-void insertion(int max, int order);
+//integer printer
+void pint(int x);
 
-/* merge sort */
-void mergesort(int max, int order);
+//integer comparer
+int compint(int x, int y);
 
-//quicksorter
-void quicksort(int max, int order);
+/* Display thread information*/
+void printPosition(string sort, int max);
 
-/* radix sort */
-void radixsort(int max, int order);
+/* Write output to file*/
+void printToFile(string filename);
 
-//selection sort
-void selection(int max, int order);
+/* Calculates averages of the sorting algorithms*/
+void average(float seconds);
 
 #endif
-

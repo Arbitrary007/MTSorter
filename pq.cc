@@ -1,6 +1,7 @@
 #include "pq.h"
+#include <omp.h>
 
-/*this will enter a value into the P.Q.*/
+// this will enter a value into the P.Q.
 
 void Push (PRIQUEUE *Q, int x){
   PRIQUEUE t;
@@ -21,7 +22,7 @@ void Push (PRIQUEUE *Q, int x){
   }
 }
 
-/*this will retrieve value from the P.Q.*/
+// this will retrieve value from the P.Q.
 
 int Pop (PRIQUEUE *Q){
   int x;
@@ -33,19 +34,19 @@ int Pop (PRIQUEUE *Q){
   return x;
 }
 
-/*this will initialize the P.Q.*/
+// this will initialize the P.Q.
 
 void Init (PRIQUEUE *Q){
   *Q = NULL;
 }
 
-/*this will ensure that the P.Q. is not empty*/
+// this will ensure that the P.Q. is not empty
 
 bool Empty (PRIQUEUE Q){
   return (Q == NULL);
 }
 
-/*this will determine if the computer is capable of holding another value in the P.Q.*/
+// this will determine if the computer is capable of holding another value in the P.Q.
 
 bool Full (PRIQUEUE Q){
   PRIQUEUE t;
@@ -58,7 +59,7 @@ bool Full (PRIQUEUE Q){
   }
 }
 
-/*this will print the P.Q. (newest to oldest)*/
+// this will print the P.Q. (newest to oldest)
 
 void ListPQ (PRIQUEUE Q){
   if (! Empty(Q)){
@@ -67,7 +68,7 @@ void ListPQ (PRIQUEUE Q){
   }
 }
 
-/*this will print the P.Q. (oldest to newest)*/
+// this will print the P.Q. (oldest to newest)
 
 void RevPQ (PRIQUEUE Q){
   if (! Empty(Q)){
