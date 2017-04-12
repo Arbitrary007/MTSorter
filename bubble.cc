@@ -15,7 +15,7 @@ void bubble(int max, int order){
   int n[max];
   float start, end, seconds;
 
-  //getting numbers for sorting... setting seed
+  //getting numbers for sorting...
   
   process();
   
@@ -57,9 +57,10 @@ void bubble(int max, int order){
   
   seconds = (end-start)/1000000;
   cout << "Sorting took " << seconds << " seconds to complete." << endl;
+
   
   /* Calculate Average*/
-  //average(seconds);
+  average(seconds);
   
   /* Printing sorted Bubble Array */
   cout << "Printing sorted Bubble Array ... " << endl;

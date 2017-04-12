@@ -8,7 +8,6 @@ using namespace std;
 /* Counting sort */
 void counting(int max, int order) {
     /* Variables... */
-    int i, j;
     int n[max];
     float start, end, seconds;
     int b = sizeof (n) / sizeof (int);
@@ -21,7 +20,7 @@ void counting(int max, int order) {
     printPosition("Counting sort", max);
 
     //Arrangement
-    for (i = 0; i < max; i++) {
+    for (int i = 0; i < max; i++) {
         if (order == 3) {
             n[i] = rng();
         } else if (order == 2) {

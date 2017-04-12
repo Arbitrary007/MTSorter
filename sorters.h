@@ -1,6 +1,8 @@
 #ifndef SORTERS_H
 #define SORTERS_H
 #include <omp.h>
+#include <iostream>
+#include <fstream>
 
 //bubble sort
 void bubble(int max, int order);

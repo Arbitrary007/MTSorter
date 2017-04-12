@@ -14,7 +14,6 @@ void mergesort(int max, int order) {
     /* Variables ... */
     int high = max - 1;
     int low = 0;
-    int i, j;
     int n[max];
     float start, end, seconds;
 
@@ -25,7 +24,7 @@ void mergesort(int max, int order) {
     printPosition("Merge sort", max);
 
     // Arrangement
-    for (i = 0; i < max; i++) {
+    for (int i = 0; i < max; i++) {
         if (order == 3) {
             n[i] = rng();
         } else if (order == 2) {

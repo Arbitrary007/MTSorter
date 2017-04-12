@@ -8,7 +8,7 @@ using namespace std;
 /* Radix sorter */
 void radixsort(int max, int order) {
     /* Variables... */
-    int i, j;
+    int i;
     int n[max];
     float start, end, seconds;
 
@@ -19,7 +19,7 @@ void radixsort(int max, int order) {
     printPosition("radix sort", max);
 
     //Arrangement
-    for (i = 0; i < max; i++) {
+    for (int i = 0; i < max; i++) {
         if (order == 3) {
             n[i] = rng();
         } else if (order == 2) {
@@ -41,7 +41,7 @@ void radixsort(int max, int order) {
 
     /* Radix Sort */
     int maxNumber = n[0];
-    for (i = 1; i < max; i++) {
+    for (int i = 1; i < max; i++) {
         if (n[i] > maxNumber)
             maxNumber = n[i];
     }
