@@ -28,6 +28,4 @@ void printToFile(string filename);
 /* Calculates averages of the sorting algorithms*/
 void average(float seconds);
 
-
-
 #endif

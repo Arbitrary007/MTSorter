@@ -6,9 +6,9 @@
 using namespace std;
 
 /* Radix sorter */
-void radixsort(int max, int order) {
+float radixsort(int max, int order) {
     /* Variables... */
-    int i;
+    int i, j;
     int n[max];
     float start, end, seconds;
 
@@ -19,7 +19,7 @@ void radixsort(int max, int order) {
     printPosition("radix sort", max);
 
     //Arrangement
-    for (int i = 0; i < max; i++) {
+    for (i = 0; i < max; i++) {
         if (order == 3) {
             n[i] = rng();
         } else if (order == 2) {
@@ -41,7 +41,7 @@ void radixsort(int max, int order) {
 
     /* Radix Sort */
     int maxNumber = n[0];
-    for (int i = 1; i < max; i++) {
+    for (i = 1; i < max; i++) {
         if (n[i] > maxNumber)
             maxNumber = n[i];
     }
@@ -61,8 +61,8 @@ void radixsort(int max, int order) {
     seconds = (end - start) / 1000000;
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    /* Calculate Average*/
-    average(seconds);
+    //return findings to main
+    return seconds;
 
     /* Printing sorted Radix Array*/
     cout << "Printing Radix Array ... " << endl;

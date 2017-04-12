@@ -12,7 +12,7 @@ using namespace std;
 
 void qsort(int n[], int l, int r);
 
-void quicksort(int max, int order) {
+float quicksort(int max, int order) {
 
     //Declaring variables...
 
@@ -65,8 +65,8 @@ void quicksort(int max, int order) {
 
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    /* Calculate Average*/
-    average(seconds);
+    //send findings to main
+    return seconds;
 
     /* Printing sorted Quicksort Array*/
     cout << "Printing sorted QuickSort Array ... " << endl;

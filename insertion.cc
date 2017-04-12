@@ -8,9 +8,9 @@ using namespace std;
 
 
 
-//My test selection sorter.
+//My test insertion sorter.
 
-void insertion(int max, int order) {
+float insertion(int max, int order) {
 
     //Declaring variables...
 
@@ -68,8 +68,8 @@ void insertion(int max, int order) {
 
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    /* Calculate Average*/
-    average(seconds);
+    //return findings to main
+    return seconds;
 
     /* Printing sorted Insertion Array*/
     cout << "Printing sorted Insertion Array ... " << endl;

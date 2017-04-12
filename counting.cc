@@ -6,8 +6,9 @@
 using namespace std;
 
 /* Counting sort */
-void counting(int max, int order) {
+float counting(int max, int order) {
     /* Variables... */
+    int i, j;
     int n[max];
     float start, end, seconds;
     int b = sizeof (n) / sizeof (int);
@@ -20,7 +21,7 @@ void counting(int max, int order) {
     printPosition("Counting sort", max);
 
     //Arrangement
-    for (int i = 0; i < max; i++) {
+    for (i = 0; i < max; i++) {
         if (order == 3) {
             n[i] = rng();
         } else if (order == 2) {
@@ -71,8 +72,8 @@ void counting(int max, int order) {
     seconds = (end - start) / 1000000;
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    /* Calculate Average*/
-    average(seconds);
+    //return findings to main
+    return seconds;
 
     /* Printing sorted Counting Array*/
     cout << "Printing sorted Counting Array ... " << endl;

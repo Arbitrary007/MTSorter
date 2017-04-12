@@ -10,10 +10,11 @@ void mergesorter(int *n, int low, int high);
 void merger(int *n, int low, int high, int mid);
 
 /* Merge sort */
-void mergesort(int max, int order) {
+float mergesort(int max, int order) {
     /* Variables ... */
     int high = max - 1;
     int low = 0;
+    int i, j;
     int n[max];
     float start, end, seconds;
 
@@ -24,7 +25,7 @@ void mergesort(int max, int order) {
     printPosition("Merge sort", max);
 
     // Arrangement
-    for (int i = 0; i < max; i++) {
+    for (i = 0; i < max; i++) {
         if (order == 3) {
             n[i] = rng();
         } else if (order == 2) {
@@ -49,17 +50,16 @@ void mergesort(int max, int order) {
     end = clock();
 
     //calculating time
-    seconds = (end - start) / 1000000;
+    seconds = (end-start)/1000000;
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    /* Calculate Average*/
-    average(seconds);
+    //return findings to main
+    return seconds;
 
     /* Printing sorted Merge Array*/
     cout << "Printing sorted Merge Array ... " << endl;
     for (int i = 0; i < max; i++) cout << n[i] << " ";
-    cout << endl;
-    return;
+    cout << n[i] << " " << endl;
 }
 
 void mergesorter(int *n, int low, int high) {

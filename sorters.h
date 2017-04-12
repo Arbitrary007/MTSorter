@@ -5,27 +5,27 @@
 #include <fstream>
 
 //bubble sort
-void bubble(int max, int order);
+float bubble(int max, int order);
 
 /* counting sort */
-void counting(int max, int order);
+float counting(int max, int order);
 
 //heap sorter
-void heapsort(int max, int order);
+float heapsort(int max, int order);
 
 //insertion sort
-void insertion(int max, int order);
+float insertion(int max, int order);
 
 /* merge sort */
-void mergesort(int max, int order);
+float mergesort(int max, int order);
 
 //quicksorter
-void quicksort(int max, int order);
+float quicksort(int max, int order);
 
 /* radix sort */
-void radixsort(int max, int order);
+float radixsort(int max, int order);
 
 //selection sort
-void selection(int max, int order);
+float selection(int max, int order);
 
 #endif

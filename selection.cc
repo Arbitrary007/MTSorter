@@ -9,7 +9,7 @@ using namespace std;
 
 //My test selection sorter.
 
-void selection(int max, int order) {
+float selection(int max, int order) {
 
     //Declaring variables...
 
@@ -64,8 +64,8 @@ void selection(int max, int order) {
 
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    /* Calculate Average*/
-    average(seconds);
+    //send back the findings to main
+    return seconds;
 
     /* Printing sorted Selection Array*/
     cout << "Printing Selection Array ... " << endl;

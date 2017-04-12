@@ -9,7 +9,7 @@ using namespace std;
 
 void heaper(int n[], const int slot, const int max);
 
-void heapsort(int max, int order) {
+float heapsort(int max, int order) {
 
     //Declaring variables...
 
@@ -64,8 +64,8 @@ void heapsort(int max, int order) {
 
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    /* Calculate Average*/
-    average(seconds);
+    //return findings to main
+    return seconds;
 
     /* Printing sorted Heapsort Array */
     cout << "Printing sorted Heapsort Array ... " << endl;
@@ -74,7 +74,7 @@ void heapsort(int max, int order) {
 
 }
 
-//this supposedly initializes the heap and reheaps it when sorting.
+//this initializes the heap and reheaps it when sorting.
 
 void heaper(int n[], int slot, int max) {
     int x;
