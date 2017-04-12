@@ -75,7 +75,7 @@ void mergesorter(int *n, int low, int high) {
 }
 
 void merger(int *n, int low, int high, int mid) {
-    int i, j, k, c[50];
+    int i, j, k, c[high];
     i = low;
     k = low;
     j = mid + 1;
