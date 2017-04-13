@@ -49,7 +49,7 @@ int main() {
             }
         }
         
-        cout << "Please wait while the arrays are being sorted. \nIt can be very fast or take a very lone time\n" << end;
+        cout << "Please wait while the arrays are being sorted. \nIt can be very fast or take a very long time\n" << end;
         //building sorting sizes
         int sizeS = 10;
         int sizeM = 50;
