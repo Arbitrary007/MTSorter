@@ -53,13 +53,14 @@ float mergesort(int max, int order) {
     seconds = (end-start)/1000000;
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    //return findings to main
-    return seconds;
-
     /* Printing sorted Merge Array*/
     cout << "Printing sorted Merge Array ... " << endl;
     for (int i = 0; i < max; i++) cout << n[i] << " ";
     cout << n[i] << " " << endl;
+
+    //return findings to main
+    return seconds;
+
 }
 
 void mergesorter(int *n, int low, int high) {

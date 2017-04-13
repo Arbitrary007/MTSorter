@@ -65,13 +65,13 @@ float quicksort(int max, int order) {
 
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    //send findings to main
-    return seconds;
-
     /* Printing sorted Quicksort Array*/
     cout << "Printing sorted QuickSort Array ... " << endl;
     for (int i = 0; i < max; i++) cout << n[i] << " ";
     cout << endl;
+
+    //send findings to main
+    return seconds;
 
 }
 

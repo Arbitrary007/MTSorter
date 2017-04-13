@@ -64,12 +64,12 @@ float selection(int max, int order) {
 
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    //send back the findings to main
-    return seconds;
-
     /* Printing sorted Selection Array*/
     cout << "Printing Selection Array ... " << endl;
     for (int i = 0; i < max; i++) cout << n[i] << " ";
     cout << endl;
+
+    //send back the findings to main
+    return seconds;
 
 }

@@ -72,11 +72,12 @@ float counting(int max, int order) {
     seconds = (end - start) / 1000000;
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    //return findings to main
-    return seconds;
-
     /* Printing sorted Counting Array*/
     cout << "Printing sorted Counting Array ... " << endl;
     for (int i = 0; i < b; i++) cout << output[i] << " ";
     cout << endl;
+
+    //return findings to main
+    return seconds;
+
 }

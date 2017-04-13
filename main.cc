@@ -6,13 +6,10 @@
 using namespace std;
 
 //setting up a menu to handle all tests at once.
-main() {
+int main() {
     char end = 'n';
-    int numbers = 0, arrangement = 0, threads, i=0;
+    int arrangement = 0, threads, i=0;
     bool quit = false;
-
-	//disable dynamic threads
-	omp_set_dynamic(0);
 
 	//introduction to the program
     cout << "Welcome to the Oklahoma City University MTSorter program." << endl;
@@ -21,7 +18,6 @@ main() {
         /* Program accepts an argument for how many threads should be running */
         cout << "How many threads would you like to use? (It is preferred if the number of threads is an even number)" << endl;
         cin >> threads;
-	cout << "You input " << threads << "." << endl;
 	//for sorting various other types of arrangements of numbers
         while ((arrangement < 1) || (arrangement > 4)) {
             cout << "How would you like the numbers to be generated?" << endl << endl
@@ -40,15 +36,13 @@ main() {
         }
 
 	//building sorting sizes
-        int sizeS = 100;
-        int sizeM = 200;
-	int sizeL = 400;
+        int sizeS = 10;
+        int sizeM = 50;
+	int sizeL = 100;
 
 	/*Open file to print*/
 	ofstream toFile;
 	toFile.open("Output.txt");
-
-	omp_set_num_threads(threads);
 
 	//building result arrays (for finding averages of times) and average totals
 	float bubbleS[threads], bubbleM[threads], bubbleL[threads];
@@ -110,7 +104,110 @@ main() {
 	}
 	cout << endl;
 
-	//average all the totals
+	//average all the totals, starting with bubblesort
+	for (i=0;i<threads;i++){
+	  avgbubbleS=avgbubbleS+bubbleS[i];
+	}
+	avgbubbleS=avgbubbleS/threads;
+	for (i=0;i<threads;i++){
+	  avgbubbleM=avgbubbleM+bubbleM[i];
+	}
+	avgbubbleM=avgbubbleM/threads;
+	for (i=0;i<threads;i++){
+	  avgbubbleL=avgbubbleL+bubbleL[i];
+	}
+	avgbubbleL=avgbubbleL/threads;
+	//for counting sort averages
+	for (i=0;i<threads;i++){
+	  avgcountS=avgcountS+countS[i];
+	}
+	avgcountS=avgcountS/threads;
+	for (i=0;i<threads;i++){
+	  avgcountM=avgcountM+countM[i];
+	}
+	avgcountM=avgcountM/threads;
+	for (i=0;i<threads;i++){
+	  avgcountL=avgcountL+countL[i];
+	}
+	avgcountL=avgcountL/threads;
+	//heap sort averages
+	for (i=0;i<threads;i++){
+	  avgheapS=avgheapS+heapS[i];
+	}
+	avgheapS=avgheapS/threads;
+	for (i=0;i<threads;i++){
+	  avgheapM=avgheapM+heapM[i];
+	}
+	avgheapM=avgheapM/threads;
+	for (i=0;i<threads;i++){
+	  avgheapL=avgheapL+heapL[i];
+	}
+	avgheapL=avgheapL/threads;
+	//insertion sort averages
+	for (i=0;i<threads;i++){
+	  avginsertS=avginsertS+insertS[i];
+	}
+	avginsertS=avginsertS/threads;
+	for (i=0;i<threads;i++){
+	  avginsertM=avginsertM+insertM[i];
+	}
+	avginsertM=avginsertM/threads;
+	for (i=0;i<threads;i++){
+	  avginsertL=avginsertL+insertL[i];
+	}
+	avginsertL=avginsertL/threads;
+	//merge sort averages
+	for (i=0;i<threads;i++){
+	  avgmergeS=avgmergeS+mergeS[i];
+	}
+	avgmergeS=avgmergeS/threads;
+	for (i=0;i<threads;i++){
+	  avgmergeM=avgmergeM+mergeM[i];
+	}
+	avgmergeM=avgmergeM/threads;
+	for (i=0;i<threads;i++){
+	  avgmergeL=avgmergeL+mergeL[i];
+	}
+	avgmergeL=avgmergeL/threads;
+	//quick sort averages
+	for (i=0;i<threads;i++){
+	  avgquickS=avgquickS+quickS[i];
+	}
+	avgquickS=avgquickS/threads;
+	for (i=0;i<threads;i++){
+	  avgquickM=avgquickM+quickM[i];
+	}
+	avgquickM=avgquickM/threads;
+	for (i=0;i<threads;i++){
+	  avgquickL=avgquickL+quickL[i];
+	}
+	avgquickL=avgquickL/threads;
+	//radix sort averages
+	for (i=0;i<threads;i++){
+	  avgradixS=avgradixS+radixS[i];
+	}
+	avgradixS=avgradixS/threads;
+	for (i=0;i<threads;i++){
+	  avgradixM=avgradixM+radixM[i];
+	}
+	avgradixM=avgradixM/threads;
+	for (i=0;i<threads;i++){
+	  avgradixL=avgradixL+radixL[i];
+	}
+	avgradixL=avgradixL/threads;
+	//selection sort averages
+	for (i=0;i<threads;i++){
+	  avgselectS=avgselectS+selectS[i];
+	}
+	avgselectS=avgselectS/threads;
+	for (i=0;i<threads;i++){
+	  avgselectM=avgselectM+selectM[i];
+	}
+	avgselectM=avgselectM/threads;
+	for (i=0;i<threads;i++){
+	  avgselectL=avgselectL+selectL[i];
+	}
+	avgselectL=avgselectL/threads;
 
 	/*close output file*/
 	toFile.close();
@@ -125,6 +222,7 @@ main() {
         }
         cout << endl;
     } //end of while
+    return 0;
 } //end of main
 
 /*Print to file*/

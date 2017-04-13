@@ -61,13 +61,13 @@ float radixsort(int max, int order) {
     seconds = (end - start) / 1000000;
     cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
-    //return findings to main
-    return seconds;
-
     /* Printing sorted Radix Array*/
     cout << "Printing Radix Array ... " << endl;
     for (int i = 0; i < max; i++) cout << n[i] << " ";
     cout << endl;
+
+    //return findings to main
+    return seconds;
 
 }
 
