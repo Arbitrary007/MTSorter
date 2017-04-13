@@ -48,7 +48,8 @@ int main() {
                 cout << "I'm sorry, but you must choose an option presented. Please try again." << endl;
             }
         }
-
+        
+        cout << "Please wait while the arrays are being sorted. \nIt can be very fast or take a very lone time\n" << end;
         //building sorting sizes
         int sizeS = 10;
         int sizeM = 50;
@@ -220,6 +221,7 @@ int main() {
         printToFile(toFile);
         /*close output file*/
         toFile.close();
+        cout << "The average time of all sorting algorithms runtimes are now printed out to Output.txt" << endl;
 
         // Ask if user wants to quit the program or run again
         cout << "Would you like to quit now (y/n)? ";
