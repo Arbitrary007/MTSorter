@@ -30,7 +30,7 @@ float quicksort(int max, int order) {
     process();
 
     /*Displaying what the current sorting alg, rank, and thread count is*/
-    printPosition("Quick sort", max);
+    //printPosition("Quick sort", max);
 
     //Arrangement
     for (i = 0; i < max; i++) {
@@ -46,9 +46,9 @@ float quicksort(int max, int order) {
     }
 
     /* Printing unsorted Quicksort Array */
-    cout << "Printing unsorted Quicksort Array ... " << endl;
-    for (int i = 0; i < max; i++) cout << n[i] << " ";
-    cout << endl;
+    //cout << "Printing unsorted Quicksort Array ... " << endl;
+    //for (int i = 0; i < max; i++) cout << n[i] << " ";
+    //cout << endl;
 
 
     //sorting (timed)
@@ -63,12 +63,12 @@ float quicksort(int max, int order) {
 
     seconds = (end - start) / 1000000;
 
-    cout << "Sorting took " << seconds << " seconds to complete." << endl;
+    //cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
     /* Printing sorted Quicksort Array*/
-    cout << "Printing sorted QuickSort Array ... " << endl;
-    for (int i = 0; i < max; i++) cout << n[i] << " ";
-    cout << endl;
+    //cout << "Printing sorted QuickSort Array ... " << endl;
+    //for (int i = 0; i < max; i++) cout << n[i] << " ";
+    //cout << endl;
 
     //send findings to main
     return seconds;

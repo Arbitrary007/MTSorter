@@ -22,7 +22,7 @@ float mergesort(int max, int order) {
     process();
 
     /* Displaying what the current sorting alg, rank, and thread count is */
-    printPosition("Merge sort", max);
+    //printPosition("Merge sort", max);
 
     // Arrangement
     for (i = 0; i < max; i++) {
@@ -38,9 +38,9 @@ float mergesort(int max, int order) {
     }
 
     /* Printing unsorted Merge Array */
-    cout << "Printing unsorted Merge Array ... " << endl;
-    for (int i = 0; i < max; i++) cout << n[i] << " ";
-    cout << endl;
+    //cout << "Printing unsorted Merge Array ... " << endl;
+    //for (int i = 0; i < max; i++) cout << n[i] << " ";
+    //cout << endl;
 
     //sorting (timed)
     start = clock();
@@ -51,12 +51,12 @@ float mergesort(int max, int order) {
 
     //calculating time
     seconds = (end-start)/1000000;
-    cout << "Sorting took " << seconds << " seconds to complete." << endl;
+    //cout << "Sorting took " << seconds << " seconds to complete." << endl;
 
     /* Printing sorted Merge Array*/
-    cout << "Printing sorted Merge Array ... " << endl;
-    for (int i = 0; i < max; i++) cout << n[i] << " ";
-    cout << n[i] << " " << endl;
+    //cout << "Printing sorted Merge Array ... " << endl;
+    //for (int i = 0; i < max; i++) cout << n[i] << " ";
+    //cout << n[i] << " " << endl;
 
     //return findings to main
     return seconds;

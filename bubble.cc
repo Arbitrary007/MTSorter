@@ -20,7 +20,7 @@ float bubble(int max, int order){
   process();
   
   /*Displaying what the current sorting alg, rank, and thread count is*/
-  printPosition("Bubble Sort", max);
+  //printPosition("Bubble Sort", max);
 
   //Arrangement
   for(i=0;i<max;i++){
@@ -36,9 +36,9 @@ float bubble(int max, int order){
   }
   
   /* Printing unsorted Bubble Array */
-  cout << "Printing unsorted Bubble Array ... " << endl;
-  for (int i = 0; i < max; i++) cout << n[i] << " ";
-  cout << endl;
+  //cout << "Printing unsorted Bubble Array ... " << endl;
+  //for (int i = 0; i < max; i++) cout << n[i] << " ";
+  //cout << endl;
 
   //sorting (timed)
   start = clock();
@@ -56,12 +56,12 @@ float bubble(int max, int order){
   //calculating time
   
   seconds = (end-start)/1000000;
-  cout << "Sorting took " << seconds << " seconds to complete." << endl;
+  //cout << "Sorting took " << seconds << " seconds to complete." << endl;
   
   /* Printing sorted Bubble Array */
-  cout << "Printing sorted Bubble Array ... " << endl;
-  for (int i = 0; i < max; i++) cout << n[i] << " ";
-  cout << endl;
+  //cout << "Printing sorted Bubble Array ... " << endl;
+  //for (int i = 0; i < max; i++) cout << n[i] << " ";
+  //cout << endl;
 
   //return findings to main
   return seconds;
