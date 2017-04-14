@@ -5,6 +5,12 @@
 #include <fstream>
 using namespace std;
 
+/* MTSorter Program 
+ *  By Team Divide by Zero (aka Team 1)
+ *  Team members: Daniel Beck and Diane Truong
+ *  Purpose: A program that utilizes multiple sorting algorithms and prints the running time average to a text file.
+ */
+
 /* So PrintToFile can read*/
 float avgbubbleS = 0, avgbubbleM = 0, avgbubbleL = 0;
 float avgcountS = 0, avgcountM = 0, avgcountL = 0;
