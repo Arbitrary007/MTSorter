@@ -61,9 +61,6 @@ int main() {
         int sizeM = 50;
         int sizeL = 100;
 
-        /*Open file to print*/
-        ofstream toFile("Output.txt");
-
         //building result arrays (for finding averages of times)
         float bubbleS[threads], bubbleM[threads], bubbleL[threads];
         float countS[threads], countM[threads], countL[threads];
@@ -222,6 +219,10 @@ int main() {
         }
         avgselectL = avgselectL / threads;
 
+        
+        /*Open file to print*/
+        ofstream toFile;
+        toFile.open("Output.txt");
         /*Print Averages */
         printToFile(toFile);
         /*close output file*/
