@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 
         /* Asks if user want the unsorted/sorted arrays displayed*/
         cout << "Would you like the values of the unsorted arrays and sorted arrays to be displayed? (y/n)" << endl;
-        cout << "Warning: If you choose yes and had specified the program to run with more than one thread, be very afraid." << endl;
+        cout << "Warning: If you choose yes and had specified the program to run with more than one thread. Prepare to be very afraid." << endl;
         cin >> end;
 
         /* Process input + Error check */
