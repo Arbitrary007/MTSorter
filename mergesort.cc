@@ -6,15 +6,14 @@
 using namespace std;
 
 
-void mergesorter(int *n, int low, int high);
-void merger(int *n, int low, int high, int mid);
+void sorter(int *n, int lowend, int highend);
+void mergeArrays(int *n, int lowend, int highend, int middle);
 
 /* Merge sort */
-float mergesort(int max, int order) {
+float mergesort(int max, int order, int display) {
+    
     /* Variables ... */
-    int high = max - 1;
-    int low = 0;
-    int i, j;
+    int highend = max - 1, lowend = 0, i;
     int n[max];
     float start, end, seconds;
 
@@ -22,7 +21,9 @@ float mergesort(int max, int order) {
     process();
 
     /* Displaying what the current sorting alg, rank, and thread count is */
-    //printPosition("Merge sort", max);
+    if (display ==1) {
+        printPosition("Merge sort", max);
+    }
 
     // Arrangement
     for (i = 0; i < max; i++) {
@@ -38,70 +39,72 @@ float mergesort(int max, int order) {
     }
 
     /* Printing unsorted Merge Array */
-    //cout << "Printing unsorted Merge Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display ==1) {
+        cout << "Printing unsorted Merge Array ... " << endl;
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //sorting (timed)
     start = clock();
 
     /* Merge Sort*/
-    mergesorter(n, low, high);
+    sorter(n, lowend, highend);
     end = clock();
 
     //calculating time
     seconds = (end-start)/1000000;
-    //cout << "Sorting took " << seconds << " seconds to complete." << endl;
-
-    /* Printing sorted Merge Array*/
-    //cout << "Printing sorted Merge Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << n[i] << " " << endl;
+    
+    if (display ==1) {
+        cout << "Sorting took " << seconds << " seconds to complete." << endl; //printing sorting time
+        cout << "Printing sorted Merge Array ... " << endl; /* Printing sorted Merge Array*/
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //return findings to main
     return seconds;
 
 }
 
-void mergesorter(int *n, int low, int high) {
-    int mid;
-    if (low < high) {
-        mid = (low + high) / 2;
-        mergesorter(n, low, mid);
-        mergesorter(n, mid + 1, high);
-        merger(n, low, high, mid);
+/* Sorts the array */
+void sorter(int *n, int lowend, int highend) {
+    int middle;
+    if (lowend < highend) {
+        middle = (lowend + highend) / 2;
+        sorter(n, lowend, middle);
+        sorter(n, middle + 1, highend);
+        mergeArrays(n, lowend, highend, middle);
     }
     return;
 }
 
-void merger(int *n, int low, int high, int mid) {
-    int i, j, k, c[high];
-    i = low;
-    k = low;
-    j = mid + 1;
-    while (i <= mid && j <= high) {
-        if (n[i] < n[j]) {
-            c[k] = n[i];
-            k++;
-            i++;
+/* Merges the arrays*/
+void mergeArrays(int *n, int lowend, int highend, int middle) {
+    int temp[highend], lowN = lowend, lowTEMP = lowend, midN = middle + 1; //test
+    while (lowN <= middle && midN <= highend) {
+        if (n[lowN] < n[midN]) {
+            temp[lowTEMP] = n[lowN];
+            lowTEMP++;
+            lowN++;
         } else {
-            c[k] = n[j];
-            k++;
-            j++;
+            temp[lowTEMP] = n[midN];
+            lowTEMP++;
+            midN++;
         }
     }
-    while (i <= mid) {
-        c[k] = n[i];
-        k++;
-        i++;
+    while (lowN <= middle) {
+        temp[lowTEMP] = n[lowN];
+        lowTEMP++;
+        lowN++;
     }
-    while (j <= high) {
-        c[k] = n[j];
-        k++;
-        j++;
+    while (midN <= highend) {
+        temp[lowTEMP] = n[midN];
+        lowTEMP++;
+        midN++;
     }
 
-    for (i = low; i < k; i++) {
-        n[i] = c[i];
+    for (lowN = lowend; lowN < lowTEMP; lowN++) {
+        n[lowN] = temp[lowN];
     }
 }

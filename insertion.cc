@@ -10,7 +10,7 @@ using namespace std;
 
 //My test insertion sorter.
 
-float insertion(int max, int order) {
+float insertion(int max, int order, int display) {
 
     //Declaring variables...
 
@@ -28,7 +28,9 @@ float insertion(int max, int order) {
     process();
 
     /*Displaying what the current sorting alg, rank, and thread count is*/
-    //printPosition("insertion sort", max);
+    if (display == 1) {
+        printPosition("insertion sort", max);
+    }
 
     //Arrangement
     for (i = 0; i < max; i++) {
@@ -44,9 +46,11 @@ float insertion(int max, int order) {
     }
 
     /* Printing unsorted Insertion Array */
-    //cout << "Printing unsorted Insertion Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Printing unsorted Insertion Array ... " << endl;
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //sorting (timed)
 
@@ -66,12 +70,12 @@ float insertion(int max, int order) {
 
     seconds = (end - start) / 1000000;
 
-    //cout << "Sorting took " << seconds << " seconds to complete." << endl;
-
-    /* Printing sorted Insertion Array*/
-    //cout << "Printing sorted Insertion Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Sorting took " << seconds << " seconds to complete." << endl; //printing sorting time
+        cout << "Printing sorted Insertion Array ... " << endl; /* Printing sorted Insertion Array */
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //return findings to main
     return seconds;

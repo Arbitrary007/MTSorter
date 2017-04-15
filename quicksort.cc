@@ -9,10 +9,9 @@ using namespace std;
 
 //My quicksorter.
 
-
 void qsort(int n[], int l, int r);
 
-float quicksort(int max, int order) {
+float quicksort(int max, int order, int display) {
 
     //Declaring variables...
 
@@ -30,7 +29,9 @@ float quicksort(int max, int order) {
     process();
 
     /*Displaying what the current sorting alg, rank, and thread count is*/
-    //printPosition("Quick sort", max);
+    if (display == 1) {
+        printPosition("Quick sort", max);
+    }
 
     //Arrangement
     for (i = 0; i < max; i++) {
@@ -46,9 +47,11 @@ float quicksort(int max, int order) {
     }
 
     /* Printing unsorted Quicksort Array */
-    //cout << "Printing unsorted Quicksort Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Printing unsorted Quicksort Array ... " << endl;
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
 
     //sorting (timed)
@@ -63,12 +66,12 @@ float quicksort(int max, int order) {
 
     seconds = (end - start) / 1000000;
 
-    //cout << "Sorting took " << seconds << " seconds to complete." << endl;
-
-    /* Printing sorted Quicksort Array*/
-    //cout << "Printing sorted QuickSort Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Sorting took " << seconds << " seconds to complete." << endl; //printing sorting time
+        cout << "Printing sorted QuickSort Array ... " << endl; /* Printing sorted Quicksort Array*/
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //send findings to main
     return seconds;

@@ -9,7 +9,7 @@ using namespace std;
 
 void heaper(int n[], const int slot, const int max);
 
-float heapsort(int max, int order) {
+float heapsort(int max, int order, int display) {
 
     //Declaring variables...
 
@@ -22,7 +22,9 @@ float heapsort(int max, int order) {
     process();
 
     /*Displaying what the current sorting alg, rank, and thread count is*/
-    //printPosition("heapsort", max);
+    if (display == 1) {
+        printPosition("heapsort", max);
+    }
 
     //Arrangement
     for (i = 0; i < max; i++) {
@@ -38,9 +40,11 @@ float heapsort(int max, int order) {
     }
 
     /* Printing unsorted Heapsort Array */
-    //cout << "Printing unsorted Heapsort Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Printing unsorted Heapsort Array ... " << endl;
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //sorting (timed)
     start = clock();
@@ -62,12 +66,12 @@ float heapsort(int max, int order) {
 
     seconds = (end - start) / 1000000;
 
-    //cout << "Sorting took " << seconds << " seconds to complete." << endl;
-
-    /* Printing sorted Heapsort Array */
-    //cout << "Printing sorted Heapsort Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Sorting took " << seconds << " seconds to complete." << endl; //printing sorting time
+        cout << "Printing sorted Heapsort Array ... " << endl; /* Printing sorted Heapsort Array */
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //return findings to main
     return seconds;

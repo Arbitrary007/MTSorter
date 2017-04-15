@@ -55,7 +55,7 @@ int compint(int x, int y) {
 void printPosition(string sort, int max) {
     int my_rank = omp_get_thread_num();
     int thread_count = omp_get_num_threads();
-    cout << "\n\n" <<"Currently at " << sort << ", sorting array size " << max << " of thread " << my_rank << " of " << thread_count << endl;
+    cout << "\n\n" <<"Currently at " << sort << ", sorting array size " << max << " of thread " << my_rank +1 << " of " << thread_count << endl;
 }
 
 /* Calculate Average*/

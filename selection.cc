@@ -9,7 +9,7 @@ using namespace std;
 
 //My test selection sorter.
 
-float selection(int max, int order) {
+float selection(int max, int order, int display) {
 
     //Declaring variables...
 
@@ -22,7 +22,9 @@ float selection(int max, int order) {
     process();
 
     /*Displaying what the current sorting alg, rank, and thread count is*/
-    //printPosition("selection sort", max);
+    if (display == 1) {
+        printPosition("selection sort", max);
+    }
 
     //Arrangement
     for (i = 0; i < max; i++) {
@@ -38,9 +40,11 @@ float selection(int max, int order) {
     }
 
     /* Printing unsorted Selection Array */
-    //cout << "Printing unsorted Selection Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Printing unsorted Selection Array ... " << endl;
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //sorting (timed)
 
@@ -62,12 +66,12 @@ float selection(int max, int order) {
 
     seconds = (end - start) / 1000000;
 
-    //cout << "Sorting took " << seconds << " seconds to complete." << endl;
-
-    /* Printing sorted Selection Array*/
-    //cout << "Printing Selection Array ... " << endl;
-    //for (int i = 0; i < max; i++) cout << n[i] << " ";
-    //cout << endl;
+    if (display == 1) {
+        cout << "Sorting took " << seconds << " seconds to complete." << endl; //printing sorting time
+        cout << "Printing Selection Array ... " << endl; /* Printing sorted Selection Array*/
+        for (int i = 0; i < max; i++) cout << n[i] << " ";
+        cout << endl;
+    }
 
     //send back the findings to main
     return seconds;
