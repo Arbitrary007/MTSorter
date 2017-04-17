@@ -276,6 +276,8 @@ int main(int argc, char *argv[]) {
             quit = true;
         } else if ((end == 'n') || (end == 'N')) {
             arrangement = 0;
+	    argc=1;
+	    threads = -1;
         } else {
             cout << "Sorry, you have entered an invalid input, please try again" << endl;
         }
