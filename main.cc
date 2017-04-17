@@ -45,15 +45,46 @@ int main(int argc, char *argv[]) {
 
                 if (threads % 4 != 0) {
                     cout << "Error! Please make your thread count a multiple of 4!" << endl;
-                }
-            }
-        } else if (argc == 2) {//if thread count given via command line argument 
+                }//fi
+            }//elihw
+        } else if (argc == 2) {//if thread count and others are given via command line argument 
             threads = atoi(argv[1]);
 
             while (threads % 4 != 0) {
                 cout << "Error! The given thread count is not a multiple of 4! Please enter one that is now:" << endl;
                 cin >> threads;
-            }
+            }//elihw
+	} else if (argc == 3){
+            threads = atoi(argv[1]);
+
+            while (threads % 4 != 0) {
+                cout << "Error! The given thread count is not a multiple of 4! Please enter one that is now:" << endl;
+                cin >> threads;
+            }//elihw
+	    arrangement = atoi(argv[2]);
+	    } else if (argc == 4){
+            threads = atoi(argv[1]);
+
+            while (threads % 4 != 0) {
+                cout << "Error! The given thread count is not a multiple of 4! Please enter one that is now:" << endl;
+                cin >> threads;
+            }//elihw
+            arrangement = atoi(argv[2]);
+	    end = argv[3][0];
+	} else if (argc == 5){
+            threads = atoi(argv[1]);
+
+            while (threads % 4 != 0) {
+                cout << "Error! The given thread count is not a multiple of 4! Please enter one that is now:" << endl;
+                cin >> threads;
+            }//elihw
+            arrangement = atoi(argv[2]);
+	    end = argv[3][0];
+	    if (argv[4][0] == 'y' || argv[4][0] == 'Y'){
+		quit = true;
+	    }else{
+		argc=4;
+	    }
         } else {
             cout << "Error! Too many arguments given!" << endl;
             exit(-1);
@@ -80,11 +111,13 @@ int main(int argc, char *argv[]) {
         }//elihw
 
         /* Asks if user want the unsorted/sorted arrays displayed*/
-        cout << "Would you like the values of the unsorted arrays and sorted arrays to be displayed? (y/n)";
-	cin >> end;
-	if (end == 'y' || end == 'Y'){
-            cout << endl << "Warning: If you choose yes and had specified the program to run with more than one thread, the output will appear erratic. Are you sure? (y/n)" << endl;
-       	    cin >> end;
+	if (argc < 4){
+            cout << "Would you like the values of the unsorted arrays and sorted arrays to be displayed? (y/n)";
+	    cin >> end;
+	    if (end == 'y' || end == 'Y'){
+                cout << endl << "Warning: If you choose yes and had specified the program to run with more than one thread, the output will appear erratic. Are you sure? (y/n)" << endl;
+       	        cin >> end;
+ 	    }
 	}
 
         /* Process input + Error check */
@@ -99,9 +132,9 @@ int main(int argc, char *argv[]) {
 
         cout << "Please wait while the arrays are being sorted." << endl << "It can be very fast or take a very long time." << endl;
         //building sorting sizes
-        int sizeS = 100;
-        int sizeM = 200;
-        int sizeL = 400;
+        int sizeS = 1000;
+        int sizeM = 10000;
+        int sizeL = 100000;
 
         //building result arrays (for finding averages of times)
         float bubbleS[threads], bubbleM[threads], bubbleL[threads];
@@ -269,17 +302,19 @@ int main(int argc, char *argv[]) {
         toFile.close();
         cout << "The average time of all sorting algorithms runtimes are now printed out to Output.txt" << endl;
 
-        // Ask if user wants to quit the program or run again
-        cout << "Would you like to quit now (y/n)? ";
-        cin >> end;
-        if ((end == 'y') || (end == 'Y')) {
-            quit = true;
-        } else if ((end == 'n') || (end == 'N')) {
-            arrangement = 0;
-	    argc=1;
-	    threads = -1;
-        } else {
-            cout << "Sorry, you have entered an invalid input, please try again" << endl;
+	if (argc != 5) {
+            // Ask if user wants to quit the program or run again
+            cout << "Would you like to quit now (y/n)? ";
+            cin >> end;
+            if ((end == 'y') || (end == 'Y')) {
+                quit = true;
+            } else if ((end == 'n') || (end == 'N')) {
+                arrangement = 0;
+	        argc=1;
+	        threads = -1;
+            } else {
+                cout << "Sorry, you have entered an invalid input, please try again" << endl;
+	    }
         }
         cout << endl;
     } //end of while
