@@ -292,7 +292,7 @@ void printToFile(ofstream& toFile, int Tcount, int S, int M, int L) {
     toFile << "SORTING ALGORITHM BENCHMARKS" << endl;;
     toFile << "Number of threads: " << Tcount << endl;
     toFile << "Sizes: Small: " << S << " Medium: " << M << " Large: " << L << endl << endl;
-	//setting up table; sixteen characters for name; ten for each slot
+	//setting up table; sixteen characters for name; numWidth for each slot
     toFile << "                |     Small      |     Medium     |     Large      |" << endl;
     toFile << "-------------------------------------------------------------------|" << endl;
     toFile << "Bubble          |";
