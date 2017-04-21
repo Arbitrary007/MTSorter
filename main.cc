@@ -39,13 +39,13 @@ int main(int argc, char *argv[]) {
     while (!quit) {
         if (argc == 1) {
                 /* Program accepts an argument for how many threads should be running */
-                cout << "How many threads would you like to use? (It must be a multiple of four):" << endl;
+                cout << "How many threads would you like to use? (It must be a multiple of four or simply 1):" << endl;
                 cin >> threads;
         } else if (argc == 2) {//if thread count and others are given via command line argument 
             threads = atoi(argv[1]);
 
-            while (threads % 4 != 0) {
-                cout << "Error! The given thread count is not a multiple of 4! Please enter one that is now:" << endl;
+            while ((threads==1)||(threads % 4 != 0)) {
+                cout << "Error! The given thread count is not a multiple of 4 or 1! Please enter one that is now:" << endl;
                 cin >> threads;
             }//elihw
 	} else if (argc == 3){
@@ -117,9 +117,9 @@ int main(int argc, char *argv[]) {
 
         cout << "Please wait while the arrays are being sorted." << endl << "It can be very fast or take a very long time." << endl;
         //building sorting sizes
-        int sizeS = 100;
-        int sizeM = 1000;
-        int sizeL = 10000;
+        int sizeS = 1000;
+        int sizeM = 10000;
+        int sizeL = 100000;
 
         //building result arrays (for finding averages of times)
         float bubbleS[threads], bubbleM[threads], bubbleL[threads];
